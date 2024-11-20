@@ -9,7 +9,7 @@ class MQTT_Client():
     sensors = {}
     client_id = 1
     broker_url = "localhost"
-    topics_signature = "IoT/Machines/"
+    topics_signature = "IoTSensors/Machines/"
 
     def __init__(self):
         self.setup_default_machines()
@@ -51,6 +51,8 @@ class MQTT_Client():
 
     def setup_broker(self, url: str):
         self.broker_url = url
+        # conecta no broker
+        self.client.connect(self.broker_url, 1883)
 
     def setup_topics_signature(self, topics_signature: str):
         self.topics_signature = topics_signature
