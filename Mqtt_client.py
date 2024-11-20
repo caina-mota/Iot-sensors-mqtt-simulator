@@ -12,9 +12,10 @@ class MQTT_Client():
     topics_signature = "IoT/Machines/"
 
     def __init__(self):
-        self.setup_mqtt_client()
         self.setup_default_machines()
         self.setup_value_ranges(50, 60)
+        self.client = mqtt.Client(client_id=f"Client {self.client_id}", protocol=mqtt.MQTTv31)
+        
 
     def setup_default_machines(self):
         # setup das máquinas e sensores
