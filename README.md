@@ -35,27 +35,27 @@ options:
 ## Exemplos de uso
 - Configurar o broker:
 ```bash
-python mqtt_client_runner.py -b "mqtt.example.com"
+python Mqtt_client_runner.py -b "mqtt.example.com"
 ```
 - Configurar IDs de máquinas:
 ```bash
-python mqtt_client_runner.py -m 1 10
+python Mqtt_client_runner.py -m 1 10
 ```
 - Configurar sensores:
 ```bash
-python mqtt_client_runner.py -s 100 4
+python Mqtt_client_runner.py -s 100 4
 ```
 - Configurar usuário e senha MQTT:
 ```bash
-python mqtt_client_runner.py -u "username" "password"
+python Mqtt_client_runner.py -u "username" "password"
 ```
 - Configurar assinatura de tópicos:
 ```bash
-python mqtt_client_runner.py -t "IoT/Devices/"
+python Mqtt_client_runner.py -t "IoT/Devices/"
 ```
 - Configurar intervalo de valores dos sensores:
 ```bash
-python mqtt_client_runner.py -v 50.0 60.0
+python Mqtt_client_runner.py -v 50.0 60.0
 ```
 ### Comportamento padrão
 Se nenhum comando for especificado, o cliente usará as configurações padrão definidas na classe MQTT_Client.
