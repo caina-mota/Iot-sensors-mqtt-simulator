@@ -10,6 +10,7 @@ class MQTT_Client():
     client_id = 1
     broker_url = "localhost"
     topics_signature = "IoTSensors/Machines/"
+    conversion_value = 4096
 
     def __init__(self):
         self.setup_default_machines()
@@ -28,6 +29,9 @@ class MQTT_Client():
                         6: [17, 18, 18, 20],
                         7: [21, 22, 23],
                         8: [24, 25, 26, 27]}
+
+    def setup_conversion_value(self, conversion_value: int):
+        self.conversion_value = conversion_value
 
     def setup_mqtt_client(self):
         # cria um identificador baseado no id da maquina
@@ -85,7 +89,7 @@ class MQTT_Client():
                     packet, _ = generate_binary_packet(machine_id=machine_id,
                                                        sensor_id=sensor_id,
                                                        float_value=sensor_value,
-                                                       conversion_value=4096)
+                                                       conversion_value=self.conversion_value)
 
                     # envia a publicação
                     self.client.publish(topic=self.topics_signature +

@@ -20,6 +20,7 @@ def main():
     parser.add_argument("-t", "--topics", type=str, help="Set the topic signature (setup_topics_signature)")
     parser.add_argument("-v", "--values", nargs=2, type=float, metavar=("INIT_VALUE", "END_VALUE"),
                         help="Set the range of values for sensors (setup_value_ranges)")
+    parser.add_argument("-c", "--conversion_value", type=int, help="Set the conversion value (setup_conversion_value)")
 
     # Analisa os argumentos fornecidos
     args = parser.parse_args()
@@ -46,6 +47,10 @@ def main():
     if args.values:
         init_value, end_value = args.values
         mqtt_client.setup_value_ranges(init_value, end_value)
+
+    if args.conversion_value:
+        conversion_value = args.conversion_value
+        mqtt_client.setup_conversion_value(conversion_value)
     
     # Inicializa o cliente MQTT
     mqtt_client.initialize_client()
