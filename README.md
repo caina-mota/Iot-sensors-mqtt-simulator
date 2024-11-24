@@ -30,6 +30,8 @@ options:
                         Set the topic signature (setup_topics_signature)
   -v INIT_VALUE END_VALUE, --values INIT_VALUE END_VALUE
                         Set the range of values for sensors (setup_value_ranges)
+  -c CONVERSION_VALUE, --conversion_value CONVERSION_VALUE
+                        Set the conversion value (setup_conversion_value)
 ```
 
 ## Exemplos de uso
@@ -59,6 +61,7 @@ python mqtt_client_runner.py -v 50.0 60.0
 ```
 ### Comportamento padrão
 Se nenhum comando for especificado, o cliente usará as configurações padrão definidas na classe MQTT_Client.
+
 
 ## Licença
 Este projeto é licenciado sob a MIT License.

@@ -10,7 +10,7 @@ class MQTT_Client():
     client_id = 1
     broker_url = "localhost"
     topics_signature = "IoTSensors/Machines/"
-    conversion_value = 4096
+    conversion_value = 512
 
     def __init__(self):
         self.setup_mqtt_client()
@@ -101,7 +101,7 @@ class MQTT_Client():
                           f'\tData: {packet}')
 
             # timer para a próxima interação
-            sleep(1)
+            sleep(1000)
 
 
 if __name__ == "__main__":
